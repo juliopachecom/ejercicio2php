@@ -1,0 +1,37 @@
+.card {
+    margin: 0 auto;
+    max-width: 600px; 
+    margin-top: 50px; 
+    padding: 20px; 
+}
+
+.resultados-section {
+    margin-top: 50px;
+}
+
+#lista-peticiones {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lista-peticiones li {
+    margin-bottom: 10px;
+}
+
+#lista-peticiones li.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+#lista-peticiones li.btn:hover {
+    background-color: #e0e0e0;
+}
+
+#lista-peticiones li.btn:before {
+    content: "▶";
+    margin-right: 10px;
+}
