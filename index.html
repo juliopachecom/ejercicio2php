@@ -18,8 +18,6 @@
 
 <body>
 
-
-
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -28,11 +26,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
           <form id="alumno-form">
             <label for="cedula" class="form-label">Cedula de Identidad:</label>
             <input type="text" class="form-control" id="cedula" required pattern="[0-9]+"
-              title="Ingresa una cedula válida (solo numeros)"><br><br>
+              title="Ingresa una cedula válida (solo números)"><br><br>
             <label for="nombre" class="form-label">Nombre:</label>
             <input type="text" class="form-control" pattern="[a-zA-Z\s]+"
               title="Ingresa un nombre válido (solo letras y espacios)" id="nombre" required><br><br>
@@ -42,69 +39,98 @@
             <input class="form-control" type="number" id="fisica" min="0" max="20" required><br><br>
             <label class="form-label" for="programacion">Nota de Programacion:</label>
             <input class="form-control" type="number" id="programacion" min="0" max="20" required><br><br>
-
-
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <input type="button" class="btn btn-primary " value="Registrar"
-            onclick="if(validarCampos()) registrarAlumno()">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+<button type="submit" form="alumno-form" class="btn btn-primary" id="guardar-btn">Guardar</button>
+
         </div>
       </div>
-      </form>
     </div>
   </div>
 
-
   <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Registro de Alumnos</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Agregar Alumno
+        </button>
+        <table class="table" id="tabla-alumnos">
+          <thead>
+            <tr>
+              <th>Cedula</th>
+              <th>Nombre</th> 
+              <th>Matematicas</th>
+              <th>Fisica</th>
+              <th>Programacion</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-alumnos">
 
-    <h2>Registro de Alumnos</h2>
+          </tbody>
+          <tfoot>
+            <tr class="total-row">
+              <th>Total</th>
+              <th></th>
+              <th id="total-matematicas"></th>
+              <th id="total-fisica"></th>
+              <th id="total-programacion"></th>
+            </tr>
+            <tr>
+              <th>Promedio</th>
+              <th></th>
+              <th id="promedio-matematicas"></th>
+              <th id="promedio-fisica"></th>
+              <th id="promedio-programacion"></th>
+            </tr>
+            <tr>
+              <th>Maxima Nota</th>
+              <th></th>
+              <th id="maxima-matematicas"></th>
+              <th id="maxima-fisica"></th>
+              <th id="maxima-programacion"></th>
+            </tr>
+            <tr>
+              <th>Aprobaron Todas las Materias</th>
+              <th id="aprobados-todas"></th>
+              <th colspan="3"></th>
+            </tr>
+            <tr>
+              <th>Aprobaron una Sola Materia</th>
+              <th id="aprobados-una"></th>
+              <th colspan="3"></th>
+            </tr>
+            <tr>
+              <th>Aprobaron Dos Materias</th>
+              <th id="aprobados-dos"></th>
+              <th colspan="3"></th>
+            </tr>
+          </tfoot>
+        </table>
 
-    <br>
-
-    <h2>Resultados</h2>
-    <table id="resultados" class="table">
-      <tr>
-        <th>Materia</th>
-        <th>Nota Promedio</th>
-        <th>Aprobados</th>
-        <th>Aplazados</th>
-      </tr>
-      <tr>
-        <td>Matematicas</td>
-        <td id="promedio-matematicas"></td>
-        <td id="aprobados-matematicas"></td>
-        <td id="aplazados-matematicas"></td>
-      </tr>
-      <tr>
-        <td>Fisica</td>
-        <td id="promedio-fisica"></td>
-        <td id="aprobados-fisica"></td>
-        <td id="aplazados-fisica"></td>
-      </tr>
-      <tr>
-        <td>Programacion</td>
-        <td id="promedio-programacion"></td>
-        <td id="aprobados-programacion"></td>
-        <td id="aplazados-programacion"></td>
-      </tr>
-    </table>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Registrar Alumnos
-    </button>
-    <h3>Alumnos</h3>
-    <table id="alumnos" class="table">
-      <tr>
-        <th>Cedula</th>
-        <th>Nombre</th>
-        <th>Matematicas</th>
-        <th>Fisica</th>
-        <th>Programacion</th>
-      </tr>
-    </table>
+        <div class="card">
+          <h4>Aprobados y Reprobados</h4>
+          <p>Aprobados:</p>
+          <ul>
+            <li>Matematicas: <span id="aprobados-matematicas"></span></li>
+            <li>Fisica: <span id="aprobados-fisica"></span></li>
+            <li>Programacion: <span id="aprobados-programacion"></span></li>
+          </ul>
+          <p>Reprobados:</p>
+          <ul>
+            <li>Matematicas: <span id="reprobados-matematicas"></span></li>
+            <li>Fisica: <span id="reprobados-fisica"></span></li>
+            <li>Programacion: <span id="reprobados-programacion"></span></li>
+          </ul>
+        </div>
+        
+        
+      </div>
+    </div>
   </div>
 
-  <script src="script.js"></script>
 </body>
 
 </html>

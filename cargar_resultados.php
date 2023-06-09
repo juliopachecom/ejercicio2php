@@ -1,5 +1,4 @@
 <?php
-
 $alumnos = file_exists('alumnos.json') ? json_decode(file_get_contents('alumnos.json'), true) : [];
 
 $totalMatematicas = 0;
@@ -8,9 +7,9 @@ $totalProgramacion = 0;
 $aprobadosMatematicas = 0;
 $aprobadosFisica = 0;
 $aprobadosProgramacion = 0;
-$aplazadosMatematicas = 0;
-$aplazadosFisica = 0;
-$aplazadosProgramacion = 0;
+$reprobadosMatematicas = 0;
+$reprobadosFisica = 0;
+$reprobadosProgramacion = 0;
 
 foreach ($alumnos as $alumno) {
     $totalMatematicas += $alumno['matematicas'];
@@ -20,19 +19,19 @@ foreach ($alumnos as $alumno) {
     if ($alumno['matematicas'] >= 10) {
         $aprobadosMatematicas++;
     } else {
-        $aplazadosMatematicas++;
+        $reprobadosMatematicas++;
     }
 
     if ($alumno['fisica'] >= 10) {
         $aprobadosFisica++;
     } else {
-        $aplazadosFisica++;
+        $reprobadosFisica++;
     }
 
     if ($alumno['programacion'] >= 10) {
         $aprobadosProgramacion++;
     } else {
-        $aplazadosProgramacion++;
+        $reprobadosProgramacion++;
     }
 }
 
@@ -47,10 +46,11 @@ $resultados = [
     'aprobados_matematicas' => $aprobadosMatematicas,
     'aprobados_fisica' => $aprobadosFisica,
     'aprobados_programacion' => $aprobadosProgramacion,
-    'aplazados_matematicas' => $aplazadosMatematicas,
-    'aplazados_fisica' => $aplazadosFisica,
-    'aplazados_programacion' => $aplazadosProgramacion
+    'reprobados_matematicas' => $reprobadosMatematicas,
+    'reprobados_fisica' => $reprobadosFisica,
+    'reprobados_programacion' => $reprobadosProgramacion
 ];
 
+header('Content-Type: application/json');
 echo json_encode($resultados);
 ?>
