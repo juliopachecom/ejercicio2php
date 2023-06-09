@@ -51,5 +51,156 @@ body {
   .total-row {
     display: none;
   }
+  #tabla-alumnos {
+    border-collapse: separate;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  #tabla-alumnos th {
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  #tabla-alumnos td {
+    background-color: #fff;
+    color: #555;
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .total-row th {
+    background-color:#f2f2f2;
+  }
+  
+  #promedio-matematicas,
+  #promedio-fisica,
+  #promedio-programacion,
+  #maxima-matematicas,
+  #maxima-fisica,
+  #maxima-programacion {
+    font-weight: bold;
+  }
+
+  .card {
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+  }
+  
+  .card h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+  }
+  
+  .card span {
+    font-weight: bold;
+  }
+  
+  .card p {
+    margin-bottom: 5px;
+  }
+
+  #tabla-alumnos {
+    background-color: #dcf4f5;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  #tabla-alumnos th, #tabla-alumnos td {
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #F5F5DC;
+  }
+  
+  #tabla-alumnos th {
+    background-color: #FFFAF0;
+    color: #444;
+  }
+  
+  .total-row {
+    background-color: #FDF8E9;
+    font-weight: bold;
+  }
+  
+  #tbody-alumnos tr:nth-child(even) {
+    background-color: #FFF8DC;
+  }
+  
+  #tbody-alumnos tr:hover {
+    background-color: #FFE4B5;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #F5F5DC, #FDF8E9, #FFFAF0, #FFF8DC, #F5F5DC);
+    font-family: Arial, sans-serif;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+  
+  .modal-header {
+    background-color: #fff;
+    border-bottom: none;
+  }
+  
+  .modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .form-control:focus {
+    border-color: #8dc1e3;
+    box-shadow: none;
+  }
+  
+  .btn-secondary {
+    background-color: #d8d8d8;
+    border-color: #d8d8d8;
+    color: #333;
+  }
+  
+  .btn-primary {
+    background-color: #8dc1e3;
+    border-color: #8dc1e3;
+    color: #fff;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #5e8bbf;
+    border-color: #5e8bbf;
+  }
+  
+  .btn-close {
+    color: #000;
+  }
+  
+  .modal-footer {
+    border-top: none;
+  }
+  
+  
+  
 
   

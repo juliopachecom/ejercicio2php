@@ -18,8 +18,7 @@ $(document).ready(function () {
         programacion: programacion
       };
       
-        $("#exampleModal").modal("hide"); // Cierra el modal al hacer clic en el botón Guardar
-
+        $("#exampleModal").modal("hide"); 
       guardarAlumno(alumno);
       limpiarFormulario();
 
